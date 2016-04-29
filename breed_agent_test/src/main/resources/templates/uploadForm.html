@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/">
+			<table>
+				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td>Brand factor:</td><td><input type="text" name="brandFactor" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Calculate" /></td></tr>
+			</table>
+		</form>
+	</div>
+
+	<div th:if="${result}">
+		<h2 th:text="${breed_CAgentsRegain}"/>
+	</div>
+	
+	<table>
+		<tr th:if="${breed_CAgentsLost}"><td>Breed_C Agents Lost:</td><td th:text="${breed_CAgentsLost}"/></tr>
+		<tr th:if="${breed_CAgentsGain}"><td>Breed_C Agents Gain:</td><td th:text="${breed_CAgentsGain}"/></tr>
+		<tr th:if="${breed_CAgentsRegain}"><td>Breed_C Agents Regain:</td><td  th:text="${breed_CAgentsRegain}"/></tr>
+	</table>
+	
+
+</body>
+</html>
